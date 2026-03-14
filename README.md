@@ -1,12 +1,16 @@
-In Express.js, res.send() sends data like text or JSON from the server, 
-while res.sendFile() sends an actual file such as an HTML page. Use res.send() 
-for API responses and res.sendFile() for web pages.
 
-Why the path Module Is Needed
+During this lab, I learned that res.send() sends data like text, JSON, 
+or HTML directly from the server, while res.sendFile()
+is used to send an actual file such as an HTML page.
+I would use res.send() for API responses or simple messages and res.sendFile() when delivering full web pages.
 
-In Node.js, the path module creates correct file paths. Without it,
-a relative path like public/index.html may fail if the server runs from a different directory.
+I also learned why the path module is important.
+It ensures the server can locate files correctly on any
+operating system. Using a relative path like 'public/index.html' might fail if the server is run from a different folder.
 
-Adding a Third Page
+Finally, adding a third page, like a menu page, 
+involves creating a new HTML file in the public folder,
+defining a new route in server.js (e.g., /menu), and using
+res.sendFile() with path.join() to serve the file. Linking the pages together allows smooth navigation between them.
 
-Create menu.html in the public folder, then add a /menu route in Express.js using res.sendFile() with path.join().
+This activity reinforced the importance of clean routing, safe file paths, and organizing server responses for a functional multi-page website.
